@@ -1,8 +1,9 @@
+const db = require('../db')
 class UserController {
     async createUser(req,res){
-        const {user} = req.body;
-        console.log(`${user} IS HERE!!!!!`);
-        res.json("ok");
+        const {name, bthdate, password} = req.body;
+        const newPerson = await db.query(`SELECT * FROM users`)
+        res.json(newPerson);
     }
     async getUsers(res,rej){
 
