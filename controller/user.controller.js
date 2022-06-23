@@ -1,7 +1,7 @@
 class UserController {
     async createUser(req,res){
-        const {name} = req.body;
-        console.log(name);
+        const {user} = req.body;
+        console.log(`${user} IS HERE!!!!!`);
         res.json("ok");
     }
     async getUsers(res,rej){
