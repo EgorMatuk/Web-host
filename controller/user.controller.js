@@ -1,6 +1,8 @@
 class UserController {
-    async createUser(res,rej){
-
+    async createUser(req,res){
+        const {name} = req.body;
+        console.log(name);
+        res.json("ok");
     }
     async getUsers(res,rej){
 
