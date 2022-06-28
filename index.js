@@ -3,6 +3,9 @@ const userRouter = require('./routes/user.routes')
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+const fs = require('fs');
+const path = require('path');
+
 app.use(express.json());
 app.use('/api', userRouter);
 
@@ -11,5 +14,8 @@ app.listen(PORT,()=>{
 });
 
 app.get('/', (req,res) => {
-    res.send("Hello World");
+   fs.readFile('./views/homePage.html',(err, data) =>{
+        res.write(data);
+        res.end();
+   });
 });
