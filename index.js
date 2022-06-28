@@ -7,5 +7,9 @@ app.use(express.json());
 app.use('/api', userRouter);
 
 app.listen(PORT,()=>{
-    console.log(`Serer start on ${PORT} port`)
+    console.log(`Serer start on ${PORT} port`);
+});
+
+app.get('/', (req,res) => {
+    res.send("Hello World");
 });
