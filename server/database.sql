@@ -16,6 +16,7 @@ CREATE TABLE "video"
 (
 	video_id SERIAL PRIMARY KEY ,
     video_name  VARCHAR(40) NOT NULL,
+	video_url  VARCHAR(80) NOT NULL,
 	video_category_idFK INTEGER NOT NULL,
 	video_user_idFK INTEGER NOT NULL,
 	FOREIGN KEY (video_category_idFK) REFERENCES category(category_id),
